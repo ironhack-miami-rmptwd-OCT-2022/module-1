@@ -1,0 +1,56 @@
+/* this is an ID selector */
+#topnav{
+    /* border: 1px solid black; */
+    text-align: center;
+    height: 50px;
+    padding-top: 20px;
+}
+
+
+
+/* this is a class selector */
+.nav-link{
+    color: black;
+    text-decoration: none;
+    margin: 0 70px;
+}
+
+
+.ingredients-list{
+    list-style: none;
+}
+
+
+.ing-list-item{
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+
+#ingredients-container{
+    background-image: url("wooden-table.jpeg");
+    background-size: cover;
+    width: 30%;
+    padding: 20px;
+    border-radius: 5px;
+    color: #d3e5f5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* this selects all <p> tags on the page */
+/* not a very useful selector because its too unselective */
+/* p{
+    background-color: #3fb0cc;
+    color: white;
+} */
