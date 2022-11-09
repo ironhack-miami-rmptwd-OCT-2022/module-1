@@ -1,0 +1,53 @@
+/* tag selector, html element that is targeted by its tag name */
+body {
+    margin: 0;
+    padding: 5vw 5vw 0;
+    background-color: lightyellow;
+}
+
+
+
+
+/* id selector use the id that you declare in the html to target the element. (ID's are unique and should only be declared "ONCE" per name in your html */
+#section__one {
+
+}
+
+
+
+
+/* class selectors are targetred using the . in front of the class name you assigned in the html. (class names are not unique and can be repeated many many many many many many many times */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__auth--user {
+    
+}
+
+.nav__auth--user-none {
+
+}
+
+.books__container {
+    justify-content: space-evenly;
+}
+
+.books__container--box {
+    width: 11vw;
+    height: 18vw;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 7px;
+}
+
+.books__container--box-thumbnail {
+    background-image: url('https://cdn.pixabay.com/photo/2020/10/02/17/55/book-5621767_1280.png');
+    width: 100%;
+    height: 75%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
