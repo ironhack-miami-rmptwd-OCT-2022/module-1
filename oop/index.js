@@ -95,3 +95,61 @@ console.log({ footballPlayerSprint: footballPlayer.sprint() });
 // output before plymorphism :   { footballPlayer: 'Sprinting' }
 // output after plymorphism :   { footballPlayer: undefined } - returns undefined because nothing is being returned in the new sprit function declared in FootballPlayer class.
 console.log({ footballPlayer });
+
+// ***************** ***************** ***************** *****************
+
+// how to randomize an array of class elements (ie: players, fighters, drivers, students)
+
+const names = [
+	"Thor",
+	"Loki",
+	"Spidey",
+	"Hulk",
+	"Falcon",
+	"Batman",
+	"Catwoman",
+	"Wolverine",
+	"Garfield",
+	"Bruno",
+	"Joan",
+	"Calipso",
+];
+const positions = ["Goal Keeper", "Center", "Attacker", "Defender", "Clowns"];
+const playerNumbers = [23, 43, 3, 65, 82, 72, 92, 34, 7, 1, 00, 007, 33, 96];
+
+function getRandomNum(arrayLength) {
+	return Math.floor(Math.random() * arrayLength);
+}
+
+function getRandomArrayIndexValue(theArray) {
+	return theArray[getRandomNum(theArray.length)];
+}
+
+const createMyFootballSquad = (teamSize) => {
+	let teamArray = [];
+
+	for (let i = 0; i < teamSize; i++) {
+		teamArray.push(
+			new FootballPlayer(
+				getRandomArrayIndexValue(names),
+				getRandomArrayIndexValue(playerNumbers),
+				getRandomArrayIndexValue(positions)
+			)
+		);
+	}
+
+	return teamArray;
+};
+
+console.log({
+	randomNumber: getRandomNum(14),
+	randomValueForArray: getRandomArrayIndexValue(names),
+});
+
+const myTeam = createMyFootballSquad(15);
+
+console.log({
+	myTeam,
+	secondPlayer: myTeam[1],
+	sencondPlayerName: myTeam[1].getName(),
+});
