@@ -2,6 +2,8 @@ window.addEventListener("load", () => {
 	console.log("scripts loaded");
 });
 
+console.log(whateverYouWant);
+
 // *******   DATA TYPES *********
 // 1. Function - ie: ()
 // 2. Object - ie: {}
@@ -27,6 +29,9 @@ whateverYouWant("hello world!");
 
 // ES6 syntax for declaring a function. This is also a good way to bind parameters to functions.
 // const theCBFunc = () => "Im the callback!";
+
+// console.log(theCBFunc);
+// variables must be declared before you can call them. Otherwise you will have an error
 
 const theCBFunc = () => {
 	return "Im the callback!";
