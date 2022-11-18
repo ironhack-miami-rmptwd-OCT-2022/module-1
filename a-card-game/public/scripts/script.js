@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-	console.log("Scripts are connected!", { document });
+	console.log("Script File Connected!");
 
 	const h1Element = document.querySelectorAll("h1");
 	const myNextButton = document.querySelector("#button__next--home-page");
@@ -14,14 +14,14 @@ window.addEventListener("load", () => {
 		".scoreBoard__score--button-decrease"
 	);
 
-	console.log({
-		h1Element,
-		myNextButton,
-		centeredBody,
-		scoreBoard,
-		scoreButtonIncreasae,
-		scoreButtonDecreasae,
-	});
+	// console.log({
+	// 	h1Element,
+	// 	myNextButton,
+	// 	centeredBody,
+	// 	scoreBoard,
+	// 	scoreButtonIncreasae,
+	// 	scoreButtonDecreasae,
+	// });
 
 	// change title
 	myNextButton.addEventListener("click", () => {
@@ -37,15 +37,5 @@ window.addEventListener("load", () => {
 		if (Number(scoreBoard.innerHTML) > 0) {
 			scoreBoard.innerHTML = Number(scoreBoard.innerHTML) - 1;
 		}
-	});
-
-	const myGame = new Game(2);
-	// myGame.deck.addDecks(myGame.getNumberOfDecksForGame(2))
-
-	console.log({
-		myGame,
-		players: myGame.players,
-		deck: myGame.deck.deck,
-		deckLength: myGame.deck.deck.length,
 	});
 });

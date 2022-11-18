@@ -5,6 +5,15 @@ body {
     flex-direction: column;
 }
 
+nav {
+    width: 99.4vw;
+    height: 3vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: steelblue;
+}
+
 #button__next--home-page {
     border-radius: 25px;
     padding: 3px 9px;

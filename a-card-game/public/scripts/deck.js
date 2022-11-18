@@ -1,4 +1,8 @@
-import shared, { sharedFunctions } from "./shared";
+// const { sharedFunctions } = (shared = require("./shared"));
+// this code above (import) is destructuring "sharedFunctions" from "shared" which is declared by making that = to the required file.
+// when working with client facing js code. The only way to be be able to import/require from another file, would be to add the file as a script in the html the same as you did with all the class js files.
+
+const { sharedFunctions } = shared;
 
 class Deck {
 	constructor(numberOfDecks) {
@@ -40,6 +44,8 @@ class Deck {
 					suit,
 					value,
 					cardValue: this.cardValue(value),
+					imageBack: `./public/assets/images/card-backs/card_back_4.jpeg`,
+					imageFront: `./public/assets/images/card-fronts/${suit}_${value}.png`,
 				});
 			});
 		});
@@ -57,6 +63,13 @@ class Deck {
 
 	shuffle() {
 		let arrLength = this.deck.length;
+
+		// console.log({
+		// 	shared,
+		// 	sharedFunctions,
+		// 	randomFunc: sharedFunctions.randomNumber(1),
+		// 	arrLength,
+		// });
 
 		while (arrLength > 0) {
 			// this sharedFunctions object is coming in from the shared file that we created which has any functions, variables, loops, etc that would be needed within multiple files which would not be part of the normal class data.

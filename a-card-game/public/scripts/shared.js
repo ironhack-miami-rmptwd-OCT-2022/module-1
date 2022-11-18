@@ -6,7 +6,7 @@
 
 // import randomNumber from '../shared/sharedFunctions/randomNumbers';
 
-export default shared = {
+const shared = {
 	sharedFunctions: {
 		randomNumber: (maxNumber, minNumber) => {
 			minNumber = minNumber ? minNumber : 0;
