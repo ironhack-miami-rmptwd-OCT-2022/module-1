@@ -15,6 +15,9 @@ const shared = {
 			return Math.floor(Math.random() * maxNumber + minNumber);
 		},
 		// randomNumber: randomNumber
+		toggleHide: (htmlElementThatIWillToggleClassFor) => {
+			htmlElementThatIWillToggleClassFor.classList.toggle("hide");
+		},
 	},
 	sharedVariables: {
 		dealerName: "Dealer",

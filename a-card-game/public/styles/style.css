@@ -14,15 +14,24 @@ nav {
     background-color: steelblue;
 }
 
-#button__next--home-page {
-    border-radius: 25px;
-    padding: 3px 9px;
-}
+#button__next--home-page {}
+
+#button__next--game-page {}
 
 .center-content {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hide {
+    display: none;
+    /* visibility: hidden; */
+}
+
+.show {
+    display: unset;
+    /* visibility: visible; */
 }
 
 .scoreBoard {
@@ -38,5 +47,26 @@ nav {
 }
 
 .scoreBoard__score--button-decrease {
+
+}
+
+.button__general--style {
+    border-radius: 25px;
+    padding: 3px 9px;
+}
+
+.game__container {
+
+}
+
+.game__container--game-start-actions {
+    flex-direction: column;
+}
+
+.game__container--button-start {
+
+}
+
+.game__container--game-content {
 
 }

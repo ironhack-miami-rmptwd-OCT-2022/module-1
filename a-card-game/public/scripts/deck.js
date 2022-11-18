@@ -2,7 +2,7 @@
 // this code above (import) is destructuring "sharedFunctions" from "shared" which is declared by making that = to the required file.
 // when working with client facing js code. The only way to be be able to import/require from another file, would be to add the file as a script in the html the same as you did with all the class js files.
 
-const { sharedFunctions } = shared;
+// const { sharedFunctions } = shared;
 
 class Deck {
 	constructor(numberOfDecks) {
@@ -73,7 +73,7 @@ class Deck {
 
 		while (arrLength > 0) {
 			// this sharedFunctions object is coming in from the shared file that we created which has any functions, variables, loops, etc that would be needed within multiple files which would not be part of the normal class data.
-			let index = sharedFunctions.randomNumber(arrLength);
+			let index = shared.sharedFunctions.randomNumber(arrLength);
 			// console.log({index})
 
 			arrLength--;
