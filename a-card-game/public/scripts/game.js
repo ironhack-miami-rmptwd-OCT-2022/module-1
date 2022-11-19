@@ -9,6 +9,7 @@ class Game {
 	}
 
 	addPlayers(howManyPlayers) {
+		// console.log({ howManyPlayers });
 		for (let i = 0; i < howManyPlayers; i++) {
 			this.players.push(new Player(`Player${i + 1}`));
 		}
@@ -17,7 +18,9 @@ class Game {
 	getNumberOfDecksForGame(totalPlayers) {
 		return totalPlayers % 2 === 0 && totalPlayers > 1
 			? totalPlayers / 2
-			: Math.floor(totalPlayers / 2);
+			: (totalPlayers = 1 ? 1 : Math.floor(totalPlayers / 2));
+		// game did not register that there was one player only because of the previous conditional, so we add an else if to check if the number of players is 1 so that we can get the 1 deck to start.
+
 		//    // ternary statement (if else statement on one line)
 		//    totalPlayers % 2 === 0 && totalPlayers > 1 ? totalPlayers / 2 : Math.floor(totalPlayers / 2)
 
@@ -32,8 +35,10 @@ class Game {
 		const blackjackStartinghandSize = 2;
 
 		for (let i = 0; i < blackjackStartinghandSize; i++) {
+			// console.log({ players: this.players });
 			this.players.forEach((player) => {
 				// player.cardsInHand.push(this.deck.getCard())
+				// console.log({ player, deck: this.deck });
 				player.receiveCard(this.deck.getCard());
 				// player.updateHandValue();
 

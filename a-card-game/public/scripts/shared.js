@@ -18,6 +18,12 @@ const shared = {
 		toggleHide: (htmlElementThatIWillToggleClassFor) => {
 			htmlElementThatIWillToggleClassFor.classList.toggle("hide");
 		},
+		addClass: (elementFromHtml, classToAdd) => {
+			elementFromHtml.classList.add(classToAdd);
+		},
+		removeClass: (elementFromHtml, classToRemove) => {
+			elementFromHtml.classList.remove(classToRemove);
+		},
 	},
 	sharedVariables: {
 		dealerName: "Dealer",

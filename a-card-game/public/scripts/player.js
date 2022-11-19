@@ -15,6 +15,7 @@ class Player {
 	}
 
 	receiveCard(cardReceived) {
+		// console.log({ cardReceived });
 		this.cardsInHand.push(cardReceived);
 
 		this.updateHandValue();

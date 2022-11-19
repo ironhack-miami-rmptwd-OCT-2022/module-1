@@ -29,6 +29,7 @@ class Deck {
 	}
 
 	addDecks(howManyDecks) {
+		console.log({ howManyDecks });
 		for (let i = 0; i < howManyDecks; i++) {
 			// this.deck.push(`Deck${i+1}`)
 			this.generateDeck();
@@ -49,6 +50,8 @@ class Deck {
 				});
 			});
 		});
+
+		console.log({ theFinalDeck: this.deck });
 	}
 
 	cardValue(cardValue) {

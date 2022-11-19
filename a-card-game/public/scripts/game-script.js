@@ -14,32 +14,43 @@ const actionsEnum = {
 	call: "call",
 	split: "split",
 };
+
+let gameStartButton;
+let gamePlayerNumberInput;
+let preGameActions;
+let gameBoard;
+let dealerContainer;
+let additionalPlayerContainer;
+let displayGameboardMessage;
+let gameboardActions;
+let playerContainer;
+
 let myGame;
 
 window.addEventListener("load", () => {
 	console.log("Scripts are connected!", { document });
 
-	const gameStartButton = document.querySelector("#button__next--game-start");
-	const gamePlayerNumberInput = document.querySelectorAll(
+	gameStartButton = document.querySelector("#button__next--game-start");
+	gamePlayerNumberInput = document.querySelectorAll(
 		".game__container--game-start-actions input"
 	);
-	const preGameActions = document.querySelectorAll(
+	preGameActions = document.querySelectorAll(
 		".game__container--game-start-actions"
 	);
-	const gameBoard = document.querySelectorAll(".game__container--game-board");
-	const dealerContainer = document.querySelectorAll(
+	gameBoard = document.querySelectorAll(".game__container--game-board");
+	dealerContainer = document.querySelectorAll(
 		".game__container--game-board-dealer"
 	);
-	const additionalPlayerContainer = document.querySelectorAll(
+	additionalPlayerContainer = document.querySelectorAll(
 		".game__container--game-board-additional_players"
 	);
-	const displayGameboardMessage = document.querySelectorAll(
+	displayGameboardMessage = document.querySelectorAll(
 		".game__container--game-board-additional_players_display-center h3"
 	);
-	const gameboardActions = document.querySelectorAll(
+	gameboardActions = document.querySelectorAll(
 		".game__container--game-board-additional_players_display-center div.game__container--game-board-additional_players_display-center--actions"
 	);
-	const playerContainer = document.querySelectorAll(
+	playerContainer = document.querySelectorAll(
 		".game__container--game-board-player"
 	);
 
@@ -64,8 +75,9 @@ window.addEventListener("load", () => {
 
 	function displayGameActions(gameActionsArray) {
 		gameActionsArray.forEach((action) => {
-			shared.sharedFunctions.toggleHide(
-				document.querySelector(`#action-${action}`)
+			shared.sharedFunctions.removeClass(
+				document.querySelector(`#action-${action}`),
+				"hide"
 			);
 		});
 
@@ -125,20 +137,65 @@ window.addEventListener("load", () => {
 	});
 });
 
+// this function is outside the window on load event because it is being used by the html and needs to be globally scoped in order for the html elements to be able to call on it.
 function handleAction(actionToHandle) {
 	console.log("Action!!");
-	console.log({ actionToHandle });
+	// console.log({ actionToHandle });
 	switch (actionToHandle) {
 		case actionsEnum.deal:
+			let filteredActions = [];
+			for (let anAction in actionsEnum) {
+				// console.log({ filterLoop: anAction });
+				filteredActions.push(actionsEnum[anAction]);
+			}
+
+			// console.log({ filteredActionsBeforeFilter: filteredActions });
+
+			const correctlyFilteredActions = filteredActions.filter(
+				(action) => {
+					// console.log({
+					// 	filter: action,
+					// 	enumValue: actionsEnum.deal,
+					// 	condition: action !== actionsEnum.deal,
+					// });
+					return action !== actionsEnum.deal;
+				}
+			);
+
 			myGame.distributeStartingCards();
+			shared.sharedFunctions.addClass(
+				document.querySelector(`#action-${actionToHandle}`),
+				"hide"
+			);
+			// console.log({
+			// 	correctlyFilteredActions,
+			// 	gameboardActions,
+			// 	children: [...gameboardActions[0].children],
+			// });
+			[...gameboardActions[0].children].forEach((actionButton) => {
+				const theRealAction = actionButton.id.split("-")[1];
+				console.log({
+					hasHide: [...actionButton.classList].includes("hide"),
+					classList: [...actionButton.classList],
+					theRealAction,
+				});
+				if (
+					// [...actionButton.classList].includes("hide") &&
+					!correctlyFilteredActions.includes(theRealAction)
+				) {
+					shared.sharedFunctions.removeClass(actionButton, "hide");
+				} else {
+					shared.sharedFunctions.addClass(actionButton, "hide");
+				}
+			});
 			break;
 		default:
 			break;
 	}
 
-	console.log({
-		dealtCards: myGame,
-		playerHands: myGame.players,
-		dealer: myGame.dealer,
-	});
+	// console.log({
+	// 	dealtCards: myGame,
+	// 	playerHands: myGame.players,
+	// 	dealer: myGame.dealer,
+	// });
 }
