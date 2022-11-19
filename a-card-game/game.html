@@ -37,8 +37,82 @@
 					Start Game
 				</button>
 			</div>
-			<div class="game__container--game-content hide">
-				<p>I Exist!! And I Shpeak!!</p>
+			<div class="game__container--game-board hide">
+				<!-- <p>I Exist!! And I Shpeak!!</p> -->
+				<div class="game__container--game-board-dealer"></div>
+				<div
+					class="game__container--game-board-additional_players center-content"
+				>
+					<div
+						class="game__container--game-board-additional_players_display-left center-content"
+					></div>
+					<div
+						class="game__container--game-board-additional_players_display-center center-content"
+					>
+						<h3></h3>
+						<div
+							class="game__container--game-board-additional_players_display-center--actions center-content"
+						>
+							<button
+								onclick="handleAction('deal')"
+								id="action-deal"
+								class="hide"
+							>
+								Deal
+							</button>
+
+							<button
+								onclick="handleAction('hit')"
+								id="action-hit"
+								class="hide"
+							>
+								Hit
+							</button>
+
+							<button
+								onclick="handleAction('stay')"
+								id="action-stay"
+								class="hide"
+							>
+								Stay
+							</button>
+
+							<button
+								onclick="handleAction('doubleDown')"
+								id="action-double"
+								class="hide"
+							>
+								Double Down
+							</button>
+
+							<button
+								onclick="handleAction('fold')"
+								id="action-fold"
+								class="hide"
+							>
+								Fold
+							</button>
+							<button
+								onclick="handleAction('call')"
+								id="action-call"
+								class="hide"
+							>
+								Call
+							</button>
+							<button
+								onclick="handleAction('split')"
+								id="action-split"
+								class="hide"
+							>
+								Split
+							</button>
+						</div>
+					</div>
+					<div
+						class="game__container--game-board-additional_players_display-right center-content"
+					></div>
+				</div>
+				<div class="game__container--game-board-player"></div>
 			</div>
 		</div>
 

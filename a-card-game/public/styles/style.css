@@ -3,6 +3,7 @@ body {
     padding: 0;
     background-color: bisque;
     flex-direction: column;
+    padding: 0 10vw;
 }
 
 nav {
@@ -22,16 +23,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.hide {
-    display: none;
-    /* visibility: hidden; */
-}
-
-.show {
-    display: unset;
-    /* visibility: visible; */
 }
 
 .scoreBoard {
@@ -67,6 +58,77 @@ nav {
 
 }
 
-.game__container--game-content {
+.game__container--game-board {
+    background-color: mediumseagreen;
+    height: 25vw;
+    width: 80vw;
+    height: 40vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border-bottom-right-radius: 565px;
+    border-bottom-left-radius: 565px;
+}
 
+.game__container--game-board-dealer {
+    background-color: aqua;
+    /* height: 5vw; */
+    height: 20%;
+    width: 95%;
+}
+
+.game__container--game-board-additional_players {
+    background-color:goldenrod;
+    /* height: 10vw; */
+    height: 40%;
+    width: 94%;
+    border-bottom-left-radius: 283px;
+    border-bottom-right-radius: 283px;
+    /* display: flex; */
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.game__container--game-board-additional_players_display-left {
+
+}
+.game__container--game-board-dealer {
+
+}
+
+.game__container--game-board-additional_players_display-center {
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.game__container--game-board-additional_players_display-center--actions {
+
+}
+
+.game__container--game-board-additional_players_display-right {
+
+}
+
+.game__container--game-board-player {
+    background-color: #9b5656;
+    /* height: 5vw; */
+    height: 20%;
+    width: 32%;
+}
+
+
+
+
+
+
+/* These classes must stay at bottom of file or they will be overridden */
+.hide {
+    display: none;
+    /* visibility: hidden; */
+}
+
+.show {
+    display: unset;
+    /* visibility: visible; */
 }
