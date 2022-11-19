@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./public/styles/style.css" />
+	</head>
+	<body class="center-content">
+		<nav>
+			<a href="./index.html">Home</a>
+			<a href="./instructions.html">Instructions</a>
+		</nav>
+
+		<h1>Game HTML</h1>
+		<br />
+		<br />
+
+		<div class="game__container">
+			<div class="center-content game__container--game-start-actions">
+				<label for="">
+					How Many Players:
+					<input
+						type="number"
+						min="0"
+						max="4"
+						placeholder="2"
+						value="1"
+					/>
+				</label>
+
+				<button
+					id="button__next--game-start"
+					class="game__container--button-start button__general--style"
+				>
+					Start Game
+				</button>
+			</div>
+			<div class="game__container--game-content hide">
+				<p>I Exist!! And I Shpeak!!</p>
+			</div>
+		</div>
+
+		<footer>
+			<p>Made with 🥨 at Ironhack!</p>
+		</footer>
+
+		<script src="./public/scripts/shared.js"></script>
+		<script src="./public/scripts/deck.js"></script>
+		<script src="./public/scripts/player.js"></script>
+		<script src="./public/scripts/dealer.js"></script>
+		<script src="./public/scripts/game.js"></script>
+		<script src="./public/scripts/game-script.js"></script>
+	</body>
+</html>
