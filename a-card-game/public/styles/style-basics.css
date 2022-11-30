@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: bisque;
+    flex-direction: column;
+}
+
+#button__next--home-page {
+    border-radius: 25px;
+    padding: 3px 9px;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreBoard {
+
+}
+
+.scoreBoard__score--display {
+
+}
+
+.scoreBoard__score--button-increase {
+
+}
+
+.scoreBoard__score--button-decrease {
+
+}

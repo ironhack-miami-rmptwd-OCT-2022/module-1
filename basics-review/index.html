@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- title shows up on the tab of the browser -->
+		<title>Document</title>
+
+		<!-- always put your link tag at the bottom of the head element. To asure that your styles will override that of any other folder, file or library bing imported -->
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<nav>
+			<a href="#">Home</a>
+
+			<div class="nav__auth--user-none">
+				<a href="#">Login</a>
+				<a href="#">Signup</a>
+			</div>
+			<div class="nav__auth--user">
+				<h5>Welcome: <a href="#">Blah</a></h5>
+				<a href="#">Logout</a>
+			</div>
+		</nav>
+
+		<!-- you should only have 1 h1 in your app as the main header. All other main headers should be h2 or lower (your call) -->
+		<h1>Da Basics</h1>
+
+		<div id="section__one">
+			<div class="center-content books__container">
+				<div class="center-content books__container--box">
+					<div
+						class="center-content books__container--box-thumbnail"
+					></div>
+					<div>
+						<h3>Name: Blah</h3>
+						<h4>Rating: 10</h4>
+					</div>
+				</div>
+
+				<div class="center-content books__container--box">
+					<div
+						class="center-content books__container--box-thumbnail"
+					></div>
+					<div>
+						<h3>Name: Blah</h3>
+						<h4>Rating: 10</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<h4>Made with 👽 at Ironhack!</h4>
+		</footer>
+
+		<!-- script tags should be at the bottom of the body in order to allow the html to load and the functions within the scripts to find the html elements after they have loaded. -->
+		<script src="script.js"></script>
+	</body>
+</html>
