@@ -70,10 +70,6 @@ class War {
     constructor(){
         this.vikingArmy = [];
         this.saxonArmy = [];
-        this.vikingsTurnToAttack = true;
-        this.movesRemaining = 9;
-        this.attackCoordinates = [];
-        // this.battleReady = false;
     }
     addViking(vike){
         this.vikingArmy.push(vike);
@@ -96,16 +92,20 @@ class War {
         return randomSoldier;
     }
 
-    vikingAttack = (theViking, theSaxon) => {
-        let result = theSaxon.receiveDamage(theViking.attack());
+    vikingAttack = () => {
+        let randomViking = this.generateRandomSoldier(this.vikingArmy);
+        let randomSaxon = this.generateRandomSoldier(this.saxonArmy);
+        let result = randomSaxon.receiveDamage(randomViking.attack());
         this.removeDeadBodies(this.saxonArmy);
-        return `${theViking.name} has attacked Saxon ${theSaxon.saxonNumber}`;
+        return `${randomViking.name} has attacked Saxon ${randomSaxon.saxonNumber}`;
     }
 
-    saxonAttack = (theSaxon, theViking) => {
-        let result = theViking.receiveDamage(theSaxon.attack());
+    saxonAttack = () => {
+        let randomViking = this.generateRandomSoldier(this.vikingArmy);
+        let randomSaxon = this.generateRandomSoldier(this.saxonArmy);
+        let result = randomViking.receiveDamage(randomSaxon.attack());
         this.removeDeadBodies(this.vikingArmy);
-        return `Saxon ${theSaxon.saxonNumber} has attacked ${theViking.name}`
+        return `Saxon ${randomSaxon.saxonNumber} has attacked ${randomViking.name}`
     }
 
     showStatus = () => {

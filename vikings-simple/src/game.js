@@ -160,58 +160,42 @@ showInitialSaxons(false);
 function transitionToBattle(){
     document.getElementById('draftPoolContainer').remove();
     document.getElementById('armiesContainer').style.width = "100%";
-    // addAttackButtons();
+    addAttackButtons();
     console.log("bout to battle, yo");
     let newRow;
     buildGameBoard();
 }
 
-
+function addAttackButtons(){
+    let vikingAttackButton = document.getElementById('viking-attack-btn')
+    vikingAttackButton.classList.remove('hidden');
+    let saxonAttackButton = document.getElementById('saxon-attack-btn')
+    saxonAttackButton.classList.remove('hidden');
+    vikingAttackButton.onclick = animateVikingAttack;
+    saxonAttackButton.onclick = animateSaxonAttack;
+    
+}
 
 
 function animateVikingAttack(){
-    let theViking = theWar.vikingArmy.find((viking)=>{
-        return (viking.x == theWar.attackCoordinates[1] && viking.y == theWar.attackCoordinates[0]);
-    })
-
-    let theSaxon = theWar.saxonArmy.find((saxon)=>{
-        return (saxon.x == theWar.attackCoordinates[1] && saxon.y == theWar.attackCoordinates[0]);
-    });
-
-
-    let status = theWar.vikingAttack(theViking, theSaxon);
- 
-    addSoldiersToBoard();
-
+    let status = theWar.vikingAttack();
     showArmiesAndDraftPool();
-    
+    document.getElementById('viking-attack-btn').classList.remove('attack-ready')
+    document.getElementById('viking-attack-btn').classList.add('attack-not-ready');
+    document.getElementById('saxon-attack-btn').classList.add('attack-ready')
+    document.getElementById('saxon-attack-btn').classList.remove('attack-not-ready');
     document.getElementById('top-heading').innerHTML = status;
 }
-
-
-
 
 function animateSaxonAttack(){
-    let theViking = theWar.vikingArmy.find((viking)=>{
-        return (viking.x == theWar.attackCoordinates[1] && viking.y == theWar.attackCoordinates[0]);
-    })
-
-    let theSaxon = theWar.saxonArmy.find((saxon)=>{
-        return (saxon.x == theWar.attackCoordinates[1] && saxon.y == theWar.attackCoordinates[0]);
-    })
-    let status = theWar.saxonAttack(theSaxon, theViking);
-
-  
-    addSoldiersToBoard();
+    let status = theWar.saxonAttack();
     showArmiesAndDraftPool();
+    document.getElementById('saxon-attack-btn').classList.remove('attack-ready')
+    document.getElementById('saxon-attack-btn').classList.add('attack-not-ready');
+    document.getElementById('viking-attack-btn').classList.add('attack-ready')
+    document.getElementById('viking-attack-btn').classList.remove('attack-not-ready');
     document.getElementById('top-heading').innerHTML = status;
 }
-
-
-
-
-
-
 
 document.getElementById('collapse-armies').onclick = function(){
     if(document.getElementById('viking-army-container').classList.contains('collapsed')){
