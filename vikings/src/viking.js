@@ -3,6 +3,8 @@ class Soldier {
     constructor(healthArgument, strengthArgument){
         this.health = healthArgument;
         this.strength = strengthArgument;
+        this.x = undefined;
+        this.y = undefined;
     }
     attack(){
         return this.strength;
@@ -47,6 +49,11 @@ class Viking extends Soldier {
 
 // Saxon
 class Saxon extends Soldier {
+    constructor(saxonNumber, healthArg, strengthArg){
+        super(healthArg, strengthArg);
+        // when i call super here i am literally calling the constructor of the solider class which needs 2 arguments so i better passs them in 
+        this.saxonNumber = saxonNumber;
+    }
     receiveDamage(amountOfDmg){
         super.receiveDamage(amountOfDmg);
         if(this.health > 0){
@@ -90,7 +97,7 @@ class War {
         let randomSaxon = this.generateRandomSoldier(this.saxonArmy);
         let result = randomSaxon.receiveDamage(randomViking.attack());
         this.removeDeadBodies(this.saxonArmy);
-        return result;
+        return `${randomViking.name} has attacked Saxon ${randomSaxon.saxonNumber}`;
     }
 
     saxonAttack = () => {
@@ -98,7 +105,7 @@ class War {
         let randomSaxon = this.generateRandomSoldier(this.saxonArmy);
         let result = randomViking.receiveDamage(randomSaxon.attack());
         this.removeDeadBodies(this.vikingArmy);
-        return result;
+        return `Saxon ${randomSaxon.saxonNumber} has attacked ${randomViking.name}`
     }
 
     showStatus = () => {

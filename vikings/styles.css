@@ -1,3 +1,15 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#declare-war{
+    width: 100px;
+}
+
 
 #vikings, #saxons, #viking-army, #saxon-army{
     display: flex;
@@ -30,17 +42,96 @@
     background-color:#6ed96c;
 }
 
-#left{
+#draftPoolContainer{
     width: 50%;
     float: left;
     border-right: 0.5px solid black;
 }
 
-#right{
+#armiesContainer{
     float: right;
     display: flex;
     justify-content: space-around;
     width: 45%;
 }
+
+.hidden{
+    visibility: hidden;
+}
+
+#viking-attack-btn, #saxon-attack-btn{
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.attack-ready{
+    background-color: #6dcaf2;
+    border: 1px solid black;
+    color: white;
+}
+
+.attack-not-ready{
+    background-color: gray;
+    border: none;
+    color: #b1b2b5;
+}
+
+#game-board{
+    clear: both;
+}
+
+.row{
+    display: flex;
+}
+
+.battle-square{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.collapsed{
+    height: 50px;
+    overflow: scroll;
+}
+
+.collapsed #saxon-attack-btn, .collapsed #viking-attack-btn{
+    visibility: hidden;
+}
+
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.avatar p{
+    margin: 0;
+}
+
+.avatar img{
+    height: 30px;
+}
+
+
+
+
+
+
+
+
+
 
 

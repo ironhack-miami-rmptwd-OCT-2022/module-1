@@ -13,25 +13,30 @@
 
     <button id="declare-war">Declare War</button>
 
-    <div id="left">
+    <div id="draftPoolContainer">
         <div id="vikings"></div>
         <div id="saxons"></div>
     </div>
-    <div id="right">
-        <div>
+    <div id="armiesContainer">
+        <div id="viking-army-container">
+            <button id="collapse-armies">+/-</button>
+            <button id="viking-attack-btn" class="hidden attack-not-ready">Launch Attack</button>
             <h3>Viking Army</h3>
             <div id="viking-army">
             </div>
         </div>
-        <div>
+        <div id="saxon-army-container">
+            <button id="saxon-attack-btn" class="hidden attack-not-ready">Launch Attack</button>
             <h3>Saxon Army</h3>
             <div id="saxon-army">
             </div>
         </div>
     </div>
+    <div id="game-board"></div>
 
 
     <script src="./src/viking.js"></script>
     <script src="./src/game.js"></script>
+    <script src="./src/game-board.js"></script>
 </body>
 </html>
